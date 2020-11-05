@@ -1,0 +1,49 @@
+<p>contact works!</p>
+<section style="padding-top: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align: center;color: #000;">
+                    <h2>Get In Touch</h2>
+                </div>
+            </div>
+            <div style="background-color: #A3A5A2;box-sizing: border-box;margin-top: 20px;" class="col-md-12">
+                <div class="row">
+                    <div class="col-md-7" style="margin-top: 30px;padding-top: 20px; box-sizing: border-box;">
+                        <form #simpleForm="ngForm" (ngSubmit)="onSubmit(simpleForm.value)"> 
+                            <div class="form-group">
+                                <input required type="text" #name="ngModel" text name="username" class="form-control" placeholder="Your Name" ngModel style="margin-bottom: 20px;color: #000;background-color: #DBDEDA;">
+                                <span *ngIf="name.invalid && name.touched" class="error">Your Name is required</span>
+                            </div>
+                            <div class="form-group">
+                                <input required type="email" #email="ngModel" email name="email" class="form-control" placeholder="Your Email" ngModel style="margin-bottom: 20px;color: #000;background-color: #DBDEDA;">
+                                <span *ngIf="email.invalid && email.touched" class="error">Your email is required</span>
+                            </div>
+                            <div class="form-group">
+                                <input required type="text" #number="ngModel" number name="contactno" minlength="10" class="form-control" placeholder="Your Phone No" ngModel style="margin-bottom: 20px;color: #000;background-color: #DBDEDA;">
+                                <span *ngIf="number.invalid && number.touched" class="error">Your Contact is required</span>
+                            </div>
+                            <div class="form-group">
+                                <textarea required #message="ngModel" class="form-control" name="message" cols="30" rows="10" placeholder="Write a Message" ngModel style="margin-bottom: 20px;color: #000;background-color: #DBDEDA;"></textarea>
+                                <span *ngIf="message.invalid && message.touched" class="error">Please enter message</span>
+                            </div>
+                            <!-- <div class="form-group">
+                                <input type="submit" class="btn btn-primary" name="SEND MESSAGE" style="cursor: pointer;color: #fff;padding-left: 20px;padding-right: 20px;border-radius: 99px;">
+                            </div> -->
+                            <div class="form-group">
+                                <button [disabled]="simpleForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5" style="margin-top: 30px;padding-top: 20px; box-sizing: border-box;">
+                        <ul style="padding: 0px;margin: 0px;">
+                            <li style="margin-bottom: 20px;color: #fff;list-style: none;color: #2c3e50;">EMAIL :<br><strong>harshitgarg194@gmail.com</strong></li>
+                            <li style="margin-bottom: 20px;color: #fff;list-style: none;color: #2c3e50;">PHONE :<br><strong>+91-8869074301</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,32 @@
+<p>viewdata works!</p>
+<div class="container">
+    <div class="row">
+        Search by name : <input type="text" [(ngModel)]="searchText">
+        <!-- <div class="col-md-12 mx-auto">
+            <div class="md-form">
+                <input type="text" [(ngModel)]="searchText" class="form-control" id="search" mdbInput />
+                <label for="search">Search</label>
+            </div>
+        </div> -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <!-- <th scope="col">Avatar</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of collection.data | filter:searchText index as i">
+                    <th>{{item.id}}</th>
+                    <td>{{item.email}}</td>
+                    <td>{{item.first_name}}</td>
+                    <td>{{item.last_name}}</td>
+                    <!-- <th>{{item.avatar}}</th> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
